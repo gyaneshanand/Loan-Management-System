@@ -1,10 +1,9 @@
-package com.nucleus.loanaplications.model;
+package com.nucleus.repaymentschedule.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "loan_application")

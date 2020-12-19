@@ -1,6 +1,7 @@
 package com.nucleus.repaymentschedule.controller;
 
-import com.nucleus.loanaplications.model.LoanApplications;
+
+import com.nucleus.repaymentschedule.model.LoanApplications;
 import com.nucleus.repaymentschedule.model.RepaymentSchedules;
 import com.nucleus.repaymentschedule.service.RepaymentScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;

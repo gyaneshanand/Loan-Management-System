@@ -1,6 +1,6 @@
 package com.nucleus.repaymentschedule.service;
 
-import com.nucleus.loanaplications.model.LoanApplications;
+import com.nucleus.repaymentschedule.model.LoanApplications;
 import com.nucleus.repaymentschedule.model.RepaymentSchedules;
 
 import java.util.List;

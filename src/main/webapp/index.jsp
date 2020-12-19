@@ -16,5 +16,8 @@
 <div class="container-fluid">
     <jsp:include page="/navbar.jsp" />
 </div>
+     <a href="<%= request.getContextPath()%>/addRepaymentReport">click1</a>
+        <a href="<%= request.getContextPath()%>/getLoanAppNo">click2</a>
+
 </body>
 </html>
