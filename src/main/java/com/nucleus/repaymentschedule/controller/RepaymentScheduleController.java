@@ -19,7 +19,9 @@ public class RepaymentScheduleController {
         LocalDate dt = LocalDate.parse(date);
         return dt;
     }
-
+    /*
+     adding repayment schedule
+     */
     @GetMapping("/addRepaymentReport")
     public void addRepaymentSchedule()
     {
