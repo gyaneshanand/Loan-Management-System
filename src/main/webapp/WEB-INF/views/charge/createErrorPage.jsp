@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="java.util.Date" %>
 <%@ page isELIgnored="false" %>
 <html>
@@ -23,10 +24,10 @@
 		<div class="jumbotron text-center" style="background-color:rgba(255,82,82 ,0.4);">
 
               <%-- Insert Main Message Below --%>
-              <h1 class="display-4"> Error Occured</h1>
+              <h1 class="display-4"> Error Occurred</h1>
 
               <%-- Insert Message Desc Here --%>
-              <p class="lead"><strong>Error in ${error} eligibility parameter</strong></p>
+              <p class="lead"><strong>${description}</strong></p>
 
               <hr>
 
@@ -34,16 +35,14 @@
 
                 <%-- Insert Dynamic Message Here Eg- policy code etc --%>
                 <p class="lead mt-4 " style="border:1px; border-style:solid; border-color:rgba(255,138,128 ,1); padding: 5px;background-color:rgba(255,138,128 ,0.1);width: 50%;">
-                <strong>Eligibility Parameter Code : </strong> ${parameterCode} </p>
-                <p class="lead mt-4 " style="border:1px; border-style:solid; border-color:rgba(255,138,128 ,1); padding: 5px;background-color:rgba(255,138,128 ,0.1);width: 50%;">
-                 ${message} </p>
+                ${chargeCode}</p>
 
               </div>
               <%-- Put your link in the value field below where you want to redirect to. --%>
               <div class="d-flex justify-content-center">
-                    <a href="<%= request.getContextPath()%>/main/eligibilityparameter">
-                    <button class="btn btn-danger">Go To Eligibility Parameter List</button>
-                    </a>
+              <a href="<%= request.getContextPath()%>/charges/newChargeCreation">
+                <button class="btn btn-danger">Create Charge Again</button>
+                </a>
               </div>
 		</div>
 	</div>

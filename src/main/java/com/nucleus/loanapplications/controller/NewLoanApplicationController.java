@@ -112,20 +112,20 @@ public class NewLoanApplicationController {
 
         String productType = loanApplications.getProductType();
         Product product = getProduct(productType);
-
-
         loanApplications.setProductCode(product);
 
 
         boolean a =  newCustomerService.createNewCustomer(customer);
-       if(a)
-           Customer.id++;
-
-        boolean b =addressService.insertAddress(address);
-        boolean c = newLoanApplicationService.addLoanApplication(loanApplications);
-
+        boolean c=false ;
+        if(a) {
+            boolean b = addressService.insertAddress(address);
+            c = newLoanApplicationService.addLoanApplication(loanApplications);
+        }
+        else{
+            return new ModelAndView("views/loanapplication/customererror");
+        }
         ModelAndView modelAndView = new ModelAndView();
-        if(c) {
+       if (c) {
             modelAndView.addObject("customerCode", customer.getCustomerCode());
             modelAndView.addObject("loanApplicationId", loanApplications.getLoanApplicationNumber());
 
@@ -137,7 +137,16 @@ public class NewLoanApplicationController {
         return modelAndView;
     }
 
-    //Method to get product a perticular Product Type
+
+    /**
+     * Method to get product a  Product object from product name
+     *
+     * @param productType This is string is used to get product object
+     *
+     *
+     *
+     * @return Product This returns a object of type Product
+     */
     public Product getProduct(String productType){
         List<Product> products = productService.getProductList();
         Product res = null;
@@ -148,11 +157,13 @@ public class NewLoanApplicationController {
         return res;
     }
 
-    //Method to get a list of product types
+    /**
+     * Method to get product a product name from  Product object
+     *
+     * @return List of String  This returns a list of String containing product Names
+     */
     public List<String> getProductType(){
         List<String> productType = new ArrayList<>();
-        productType.add("Home Loan");
-        productType.add("Education Loan");
         List<Product> products = productService.getProductList();
         for(Product product:products){
             productType.add(product.getProductName());
