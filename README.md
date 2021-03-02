@@ -1,3 +1,2 @@
-# NucleusProject
+# LMS-one
 
-- Team 4 added their master branch
